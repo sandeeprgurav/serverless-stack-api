@@ -6,7 +6,7 @@
   "scripts": {
     "test": "serverless-bundle test"
   },
-  "author": "",
+  "author": "sandeep",
   "license": "MIT",
   "repository": {
     "type": "git",
