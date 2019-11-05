@@ -19,6 +19,7 @@ export async function main(event, context) {
     });
     return success({ status: true });
   } catch (e) {
+    console.log(e);
     return failure({ message: e.message });
   }
 }
