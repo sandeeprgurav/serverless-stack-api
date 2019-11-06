@@ -1,5 +1,5 @@
 # NOTE: update this with your service name
-service: sandeep-app-dev
+service: ols-app
 
 # Create an optimized package for our functions
 package:
