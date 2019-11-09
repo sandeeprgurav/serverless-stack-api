@@ -16,7 +16,7 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   # Set the table name here so we can use it while testing locally
   tableName: ${self:custom.stage}-notes
-  tableNameStudent: ${self:custom.stage}-student  
+  tableNameStudent: ${self:custom.stage}-student
 
 provider:
   name: aws
@@ -28,6 +28,7 @@ provider:
   # under process.env.
   environment:
     tableName: ${self:custom.tableName}
+    tableNameStudent: ${self:custom.tableNameStudent}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
@@ -114,6 +115,14 @@ functions:
     events:
       - http:
           path: billing
+          method: post
+          cors: true
+          authorizer: aws_iam
+  createStudent:
+    handler: createStudent.main
+    events:
+      - http:
+          path: students
           method: post
           cors: true
           authorizer: aws_iam
