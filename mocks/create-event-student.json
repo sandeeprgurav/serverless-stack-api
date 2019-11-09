@@ -1,0 +1,8 @@
+{
+  "body": "{\"firstName\":\"sandeep\",\"lastName\":\"gurav\",\"email\":\"sandeep@gmail.com\",\"city\":\"newark\",\"state\":\"DE\",\"Country\":\"USA\",\"pincode\":\"19702\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "us-east-2:ad32660a-2611-4473-a5bf-88cf48e80bf0"
+    }
+  }
+}

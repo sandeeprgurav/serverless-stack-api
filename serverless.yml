@@ -17,6 +17,7 @@ custom:
   # Set the table name here so we can use it while testing locally
   tableName: ${self:custom.stage}-notes
   tableNameStudent: ${self:custom.stage}-student
+  tableNameTrainer: ${self:custom.stage}-trainer
 
 provider:
   name: aws
@@ -29,6 +30,7 @@ provider:
   environment:
     tableName: ${self:custom.tableName}
     tableNameStudent: ${self:custom.tableNameStudent}
+    tableNameTrainer: ${self:custom.tableNameTrainer}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
@@ -123,6 +125,14 @@ functions:
     events:
       - http:
           path: students
+          method: post
+          cors: true
+          authorizer: aws_iam
+  createTrainer:
+    handler: createTrainer.main
+    events:
+      - http:
+          path: trainers
           method: post
           cors: true
           authorizer: aws_iam

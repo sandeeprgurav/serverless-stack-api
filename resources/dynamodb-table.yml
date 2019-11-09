@@ -31,3 +31,19 @@ Resources:
           KeyType: RANGE
       # Set the capacity to auto-scale
       BillingMode: PAY_PER_REQUEST
+  TrainerTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.tableNameTrainer}
+      AttributeDefinitions:
+        - AttributeName: usedid
+          AttributeType: S
+        - AttributeName: trainerId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: usedid
+          KeyType: HASH
+        - AttributeName: trainerId
+          KeyType: RANGE
+      # Set the capacity to auto-scale
+      BillingMode: PAY_PER_REQUEST
