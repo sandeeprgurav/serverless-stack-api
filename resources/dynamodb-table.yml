@@ -20,7 +20,7 @@ Resources:
     Properties:
       TableName: ${self:custom.tableNameStudent}
       AttributeDefinitions:
-        - AttributeName: userId
+        - AttributeName: usedid
           AttributeType: S
         - AttributeName: studentId
           AttributeType: S
@@ -41,7 +41,7 @@ Resources:
         - AttributeName: statusFlag
           AttributeType: S
       KeySchema:
-        - AttributeName: userId
+        - AttributeName: usedid
           KeyType: HASH
         - AttributeName: studentId
           KeyType: RANGE
