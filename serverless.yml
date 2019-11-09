@@ -49,6 +49,8 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
+        - "Fn::GetAtt": [ StudentTable, Arn ]
+        - "Fn::GetAtt": [ TrainerTable, Arn ]
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
