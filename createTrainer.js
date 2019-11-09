@@ -9,7 +9,7 @@ export async function main(event, context) {
     Item: {
       usedid: event.requestContext.identity.cognitoIdentityId,
       trainerId: uuid.v1(),
-      comment: data.comment,      
+      firstName: data.firstName,
       createdAt: Date.now()
     }
   };
