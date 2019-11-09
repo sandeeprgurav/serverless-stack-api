@@ -20,28 +20,12 @@ Resources:
     Properties:
       TableName: ${self:custom.tableNameStudent}
       AttributeDefinitions:
-        - AttributeName: usedid
+        - AttributeName: userId
           AttributeType: S
         - AttributeName: studentId
           AttributeType: S
-        - AttributeName: firstName
-          AttributeType: S
-        - AttributeName: lastName
-          AttributeType: S
-        - AttributeName: email
-          AttributeType: S
-        - AttributeName: city
-          AttributeType: S
-        - AttributeName: state
-          AttributeType: S
-        - AttributeName: country
-          AttributeType: S
-        - AttributeName: pincode
-          AttributeType: S
-        - AttributeName: statusFlag
-          AttributeType: S
       KeySchema:
-        - AttributeName: usedid
+        - AttributeName: userId
           KeyType: HASH
         - AttributeName: studentId
           KeyType: RANGE
