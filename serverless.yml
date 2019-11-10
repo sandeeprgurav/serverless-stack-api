@@ -130,6 +130,50 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getStudent:
+    # Defines an HTTP API endpoint that calls the main function in getStudent.js
+    # - path: url path is /students/{id}
+    # - method: GET request
+    handler: getStudent.main
+    events:
+      - http:
+          path: students/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  listStudent:
+    # Defines an HTTP API endpoint that calls the main function in listStudent.js
+    # - path: url path is /students
+    # - method: GET request
+    handler: listStudent.main
+    events:
+      - http:
+          path: students
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateStudent:
+    # Defines an HTTP API endpoint that calls the main function in updateStudent.js
+    # - path: url path is /students/{id}
+    # - method: PUT request
+    handler: updateStudent.main
+    events:
+      - http:
+          path: students/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+  deleteStudent:
+    # Defines an HTTP API endpoint that calls the main function in deleteStudent.js
+    # - path: url path is /students/{id}
+    # - method: DELETE request
+    handler: deleteStudent.main
+    events:
+      - http:
+          path: students/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
   createTrainer:
     handler: createTrainer.main
     events:
